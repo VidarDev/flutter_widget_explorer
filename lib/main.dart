@@ -9,6 +9,7 @@ import 'package:flutter_widget_explorer/views/padding_sizedbox.page.dart';
 import 'package:flutter_widget_explorer/views/row_column.page.dart';
 import 'package:flutter_widget_explorer/views/scaffold_appbar.page.dart';
 import 'package:flutter_widget_explorer/views/stack_position.page.dart';
+import 'package:flutter_widget_explorer/views/search_bar.page.dart';
 import 'package:flutter_widget_explorer/views/chips.page.dart';
 
 // At the top of your HomePage class
@@ -204,10 +205,11 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ScaffoldAppBarPage(),
+                    builder: (context) => SearchBarPage(),
                   ),
                 );
               },
+
             ),
             ListTile(
               leading: const Icon(Icons.web),
