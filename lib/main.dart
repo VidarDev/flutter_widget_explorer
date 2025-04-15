@@ -7,6 +7,7 @@ import 'package:flutter_widget_explorer/views/datatable_page.dart';
 import 'package:flutter_widget_explorer/views/expanded_spacer.page.dart';
 import 'package:flutter_widget_explorer/views/grid_views.page.dart';
 import 'package:flutter_widget_explorer/views/padding_sizedbox.page.dart';
+import 'package:flutter_widget_explorer/views/progress_indicators.page.dart';
 import 'package:flutter_widget_explorer/views/row_column.page.dart';
 import 'package:flutter_widget_explorer/views/scaffold_appbar.page.dart';
 import 'package:flutter_widget_explorer/views/scollviews_slivers.page.dart';
@@ -180,7 +181,7 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ScaffoldAppBarPage(),
+                    builder: (context) => const ProgressIndicatorsPage(),
                   ),
                 );
               },
