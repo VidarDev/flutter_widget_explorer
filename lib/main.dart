@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_explorer/views/card_and_list.page.dart';
 import 'package:flutter_widget_explorer/views/infinite_scrolling.page.dart';
 import 'package:flutter_widget_explorer/views/center_align.page.dart';
 import 'package:flutter_widget_explorer/views/container_explorer.page.dart';
@@ -155,7 +156,7 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ScaffoldAppBarPage(),
+                    builder: (context) => const CardsAndList(),
                   ),
                 );
               },
