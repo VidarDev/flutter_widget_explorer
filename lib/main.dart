@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_explorer/views/infinite_scrolling.page.dart';
 import 'package:flutter_widget_explorer/views/center_align.page.dart';
 import 'package:flutter_widget_explorer/views/container_explorer.page.dart';
+import 'package:flutter_widget_explorer/views/datatable_page.dart';
 import 'package:flutter_widget_explorer/views/expanded_spacer.page.dart';
+import 'package:flutter_widget_explorer/views/grid_views.page.dart';
 import 'package:flutter_widget_explorer/views/padding_sizedbox.page.dart';
 import 'package:flutter_widget_explorer/views/row_column.page.dart';
 import 'package:flutter_widget_explorer/views/scaffold_appbar.page.dart';
 import 'package:flutter_widget_explorer/views/stack_position.page.dart';
 import 'package:flutter_widget_explorer/views/search_bar.page.dart';
+import 'package:flutter_widget_explorer/views/chips.page.dart';
 
 // At the top of your HomePage class
 final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -162,9 +166,7 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => const ScaffoldAppBarPage(),
-                  ),
+                  MaterialPageRoute(builder: (context) => const Chips()),
                 );
               },
             ),
@@ -230,7 +232,7 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ScaffoldAppBarPage(),
+                    builder: (context) => const GridViewsPage(),
                   ),
                 );
               },
@@ -256,7 +258,7 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ScaffoldAppBarPage(),
+                    builder: (context) => DataTablePage(),
                   ),
                 );
               },
@@ -274,19 +276,81 @@ class HomePage extends StatelessWidget {
                 );
               },
             ),
-            ListTile(
-              leading: const Icon(Icons.web),
-              title: const Text('Infinite Scrolling'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ScaffoldAppBarPage(),
+            const Divider(thickness: 2),
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.purple.shade400,
+                    Colors.blue.shade400,
+                    Colors.pink.shade400,
+                    Colors.purple.shade400,
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.purple.withOpacity(0.5),
+                    blurRadius: 12,
+                    spreadRadius: 2,
                   ),
-                );
-              },
+                ],
+              ),
+              margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              child: ShaderMask(
+                shaderCallback: (Rect bounds) {
+                  return LinearGradient(
+                    colors: [
+                      Colors.white,
+                      Colors.white.withOpacity(0.5),
+                      Colors.white,
+                    ],
+                    stops: const [0.0, 0.5, 1.0],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    tileMode: TileMode.mirror,
+                  ).createShader(bounds);
+                },
+                child: ListTile(
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
+                  leading: const Icon(
+                    Icons.airline_seat_recline_normal_outlined,
+                    color: Colors.white,
+                    size: 28,
+                  ),
+                  title: const Text(
+                    '✨ Infinite Scrolling ✨',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      shadows: [
+                        Shadow(
+                          color: Colors.black26,
+                          offset: Offset(2, 2),
+                          blurRadius: 4,
+                        ),
+                      ],
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const InfiniteScrollingPage(),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
+            const Divider(thickness: 2),
           ],
         ),
       ),
