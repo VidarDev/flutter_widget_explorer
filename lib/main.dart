@@ -5,6 +5,7 @@ import 'package:flutter_widget_explorer/views/expanded_spacer.page.dart';
 import 'package:flutter_widget_explorer/views/padding_sizedbox.page.dart';
 import 'package:flutter_widget_explorer/views/row_column.page.dart';
 import 'package:flutter_widget_explorer/views/scaffold_appbar.page.dart';
+import 'package:flutter_widget_explorer/views/pull_to_refresh.page.dart';
 import 'package:flutter_widget_explorer/views/stack_position.page.dart';
 
 // At the top of your HomePage class
@@ -235,13 +236,13 @@ class HomePage extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.web),
-              title: const Text('Scaffold & AppBar'),
+              title: const Text('Pull-to-Refresh'),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ScaffoldAppBarPage(),
+                    builder: (context) => const PullToRefreshPage(),
                   ),
                 );
               },
