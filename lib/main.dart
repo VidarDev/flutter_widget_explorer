@@ -6,6 +6,7 @@ import 'package:flutter_widget_explorer/views/padding_sizedbox.page.dart';
 import 'package:flutter_widget_explorer/views/row_column.page.dart';
 import 'package:flutter_widget_explorer/views/scaffold_appbar.page.dart';
 import 'package:flutter_widget_explorer/views/stack_position.page.dart';
+import 'package:flutter_widget_explorer/views/chips.page.dart';
 
 // At the top of your HomePage class
 final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -161,9 +162,7 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => const ScaffoldAppBarPage(),
-                  ),
+                  MaterialPageRoute(builder: (context) => const Chips()),
                 );
               },
             ),
