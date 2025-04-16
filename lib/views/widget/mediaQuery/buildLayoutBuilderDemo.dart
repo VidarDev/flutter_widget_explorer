@@ -31,7 +31,10 @@ class _BuildLayoutBuilderDemoState extends State<BuildLayoutBuilderDemo> {
                 const Text('Largeur : '),
                 Expanded(
                   child: Slider(
-                    value: _containerWidth,
+                    value: _containerWidth.clamp(
+                      0,
+                      (mediaQuery.size.width.toInt() - 64),
+                    ),
                     min: 150,
                     max: mediaQuery.size.width.toInt() - 64,
                     divisions: 50,
