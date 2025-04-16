@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_explorer/views/card_and_list.page.dart';
-import 'package:flutter_widget_explorer/views/infinite_scrolling.page.dart';
 import 'package:flutter_widget_explorer/views/center_align.page.dart';
+import 'package:flutter_widget_explorer/views/chips.page.dart';
 import 'package:flutter_widget_explorer/views/container_explorer.page.dart';
 import 'package:flutter_widget_explorer/views/datatable_page.dart';
 import 'package:flutter_widget_explorer/views/expanded_spacer.page.dart';
 import 'package:flutter_widget_explorer/views/grid_views.page.dart';
+import 'package:flutter_widget_explorer/views/infinite_scrolling.page.dart';
 import 'package:flutter_widget_explorer/views/padding_sizedbox.page.dart';
 import 'package:flutter_widget_explorer/views/progress_indicators.page.dart';
+import 'package:flutter_widget_explorer/views/pull_to_refresh.page.dart';
 import 'package:flutter_widget_explorer/views/row_column.page.dart';
 import 'package:flutter_widget_explorer/views/scaffold_appbar.page.dart';
-import 'package:flutter_widget_explorer/views/pull_to_refresh.page.dart';
 import 'package:flutter_widget_explorer/views/scollviews_slivers.page.dart';
-import 'package:flutter_widget_explorer/views/stack_position.page.dart';
 import 'package:flutter_widget_explorer/views/search_bar.page.dart';
-import 'package:flutter_widget_explorer/views/chips.page.dart';
+import 'package:flutter_widget_explorer/views/stack_position.page.dart';
 
 // At the top of your HomePage class
 final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -157,9 +157,7 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => const CardsAndList(),
-                  ),
+                  MaterialPageRoute(builder: (context) => const CardsAndList()),
                 );
               },
             ),
@@ -208,12 +206,9 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => SearchBarPage(),
-                  ),
+                  MaterialPageRoute(builder: (context) => SearchBarPage()),
                 );
               },
-
             ),
             ListTile(
               leading: const Icon(Icons.web),
@@ -261,9 +256,7 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => DataTablePage(),
-                  ),
+                  MaterialPageRoute(builder: (context) => DataTablePage()),
                 );
               },
             ),
@@ -277,6 +270,106 @@ class HomePage extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => const CustomScrollViewPage(),
                   ),
+                );
+              },
+            ),
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.web),
+              title: const Text('GraphicsView & ChartWidgets'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Container()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.web),
+              title: const Text('CustomPainter & Canvas'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Container()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.web),
+              title: const Text('Clip & Shapes'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Container()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.web),
+              title: const Text('Adaptive Layouts'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Container()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.web),
+              title: const Text('Adaptive Platform Widgets'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Container()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.web),
+              title: const Text('Accessibility Features'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Container()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.web),
+              title: const Text('Draggable & DragTarget'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Container()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.web),
+              title: const Text('LongPressDraggable'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Container()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.web),
+              title: const Text('ReorderableListView'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Container()),
                 );
               },
             ),
