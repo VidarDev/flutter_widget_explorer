@@ -10,6 +10,7 @@ import 'package:flutter_widget_explorer/views/padding_sizedbox.page.dart';
 import 'package:flutter_widget_explorer/views/progress_indicators.page.dart';
 import 'package:flutter_widget_explorer/views/row_column.page.dart';
 import 'package:flutter_widget_explorer/views/scaffold_appbar.page.dart';
+import 'package:flutter_widget_explorer/views/pull_to_refresh.page.dart';
 import 'package:flutter_widget_explorer/views/scollviews_slivers.page.dart';
 import 'package:flutter_widget_explorer/views/stack_position.page.dart';
 import 'package:flutter_widget_explorer/views/search_bar.page.dart';
@@ -242,13 +243,13 @@ class HomePage extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.web),
-              title: const Text('Scaffold & AppBar'),
+              title: const Text('Pull-to-Refresh'),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ScaffoldAppBarPage(),
+                    builder: (context) => const PullToRefreshPage(),
                   ),
                 );
               },
