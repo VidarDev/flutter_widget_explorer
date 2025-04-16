@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_explorer/views/adaptive_platform.page.dart';
 import 'package:flutter_widget_explorer/views/adaptative_layout.page.dart';
 import 'package:flutter_widget_explorer/views/card_and_list.page.dart';
 import 'package:flutter_widget_explorer/views/center_align.page.dart';
@@ -328,7 +329,9 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Container()),
+                  MaterialPageRoute(
+                    builder: (context) => AdaptivePlatformPage(),
+                  ),
                 );
               },
             ),
