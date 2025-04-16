@@ -10,6 +10,7 @@ import 'package:flutter_widget_explorer/views/infinite_scrolling.page.dart';
 import 'package:flutter_widget_explorer/views/padding_sizedbox.page.dart';
 import 'package:flutter_widget_explorer/views/progress_indicators.page.dart';
 import 'package:flutter_widget_explorer/views/pull_to_refresh.page.dart';
+import 'package:flutter_widget_explorer/views/reorderable_list_view.page.dart';
 import 'package:flutter_widget_explorer/views/row_column.page.dart';
 import 'package:flutter_widget_explorer/views/scaffold_appbar.page.dart';
 import 'package:flutter_widget_explorer/views/scollviews_slivers.page.dart';
@@ -369,7 +370,7 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Container()),
+                  MaterialPageRoute(builder: (context) => ReorderableListViewPage()),
                 );
               },
             ),
