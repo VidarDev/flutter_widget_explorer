@@ -19,6 +19,7 @@ import 'package:flutter_widget_explorer/views/scaffold_appbar.page.dart';
 import 'package:flutter_widget_explorer/views/scollviews_slivers.page.dart';
 import 'package:flutter_widget_explorer/views/search_bar.page.dart';
 import 'package:flutter_widget_explorer/views/stack_position.page.dart';
+import 'package:flutter_widget_explorer/views/media_query.page.dart';
 import 'package:flutter_widget_explorer/views/clip_and_shapes.page.dart';
 
 // At the top of your HomePage class
@@ -333,6 +334,17 @@ class HomePage extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => AdaptivePlatformPage(),
                   ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.web),
+              title: const Text('Media Query'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MediaQueryViewPage()),
                 );
               },
             ),
