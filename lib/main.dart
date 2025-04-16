@@ -3,10 +3,11 @@ import 'package:flutter_widget_explorer/views/card_and_list.page.dart';
 import 'package:flutter_widget_explorer/views/center_align.page.dart';
 import 'package:flutter_widget_explorer/views/chips.page.dart';
 import 'package:flutter_widget_explorer/views/container_explorer.page.dart';
-import 'package:flutter_widget_explorer/views/datatable_page.dart';
+import 'package:flutter_widget_explorer/views/datatable.page.dart';
 import 'package:flutter_widget_explorer/views/expanded_spacer.page.dart';
 import 'package:flutter_widget_explorer/views/grid_views.page.dart';
 import 'package:flutter_widget_explorer/views/infinite_scrolling.page.dart';
+import 'package:flutter_widget_explorer/views/kanban_board.page.dart';
 import 'package:flutter_widget_explorer/views/padding_sizedbox.page.dart';
 import 'package:flutter_widget_explorer/views/progress_indicators.page.dart';
 import 'package:flutter_widget_explorer/views/pull_to_refresh.page.dart';
@@ -347,7 +348,7 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Container()),
+                  MaterialPageRoute(builder: (context) => KanbanPage()),
                 );
               },
             ),
