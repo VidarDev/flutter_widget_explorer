@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_explorer/views/adaptive_platform.page.dart';
+import 'package:flutter_widget_explorer/views/adaptative_layout.page.dart';
 import 'package:flutter_widget_explorer/views/card_and_list.page.dart';
 import 'package:flutter_widget_explorer/views/center_align.page.dart';
 import 'package:flutter_widget_explorer/views/chips.page.dart';
 import 'package:flutter_widget_explorer/views/container_explorer.page.dart';
-import 'package:flutter_widget_explorer/views/datatable_page.dart';
+import 'package:flutter_widget_explorer/views/datatable.page.dart';
 import 'package:flutter_widget_explorer/views/expanded_spacer.page.dart';
 import 'package:flutter_widget_explorer/views/grid_views.page.dart';
 import 'package:flutter_widget_explorer/views/infinite_scrolling.page.dart';
+import 'package:flutter_widget_explorer/views/kanban_board.page.dart';
 import 'package:flutter_widget_explorer/views/padding_sizedbox.page.dart';
 import 'package:flutter_widget_explorer/views/progress_indicators.page.dart';
 import 'package:flutter_widget_explorer/views/pull_to_refresh.page.dart';
+import 'package:flutter_widget_explorer/views/reorderable_list_view.page.dart';
 import 'package:flutter_widget_explorer/views/row_column.page.dart';
 import 'package:flutter_widget_explorer/views/scaffold_appbar.page.dart';
 import 'package:flutter_widget_explorer/views/scollviews_slivers.page.dart';
 import 'package:flutter_widget_explorer/views/search_bar.page.dart';
 import 'package:flutter_widget_explorer/views/stack_position.page.dart';
+import 'package:flutter_widget_explorer/views/media_query.page.dart';
+import 'package:flutter_widget_explorer/views/clip_and_shapes.page.dart';
 import 'package:flutter_widget_explorer/views/puzzle.page.dart';
 
 // At the top of your HomePage class
@@ -304,7 +310,7 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Container()),
+                  MaterialPageRoute(builder: (context) => const ClipAndShapesPage()),
                 );
               },
             ),
@@ -315,7 +321,7 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Container()),
+                  MaterialPageRoute(builder: (context) => AdaptiveLayoutPage()),
                 );
               },
             ),
@@ -326,7 +332,20 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Container()),
+                  MaterialPageRoute(
+                    builder: (context) => AdaptivePlatformPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.web),
+              title: const Text('Media Query'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MediaQueryViewPage()),
                 );
               },
             ),
@@ -348,7 +367,7 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Container()),
+                  MaterialPageRoute(builder: (context) => KanbanPage()),
                 );
               },
             ),
@@ -372,85 +391,10 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Container()),
+                  MaterialPageRoute(builder: (context) => ReorderableListViewPage()),
                 );
               },
             ),
-            const Divider(thickness: 2),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.purple.shade400,
-                    Colors.blue.shade400,
-                    Colors.pink.shade400,
-                    Colors.purple.shade400,
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.purple.withOpacity(0.5),
-                    blurRadius: 12,
-                    spreadRadius: 2,
-                  ),
-                ],
-              ),
-              margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-              child: ShaderMask(
-                shaderCallback: (Rect bounds) {
-                  return LinearGradient(
-                    colors: [
-                      Colors.white,
-                      Colors.white.withOpacity(0.5),
-                      Colors.white,
-                    ],
-                    stops: const [0.0, 0.5, 1.0],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    tileMode: TileMode.mirror,
-                  ).createShader(bounds);
-                },
-                child: ListTile(
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 8,
-                  ),
-                  leading: const Icon(
-                    Icons.airline_seat_recline_normal_outlined,
-                    color: Colors.white,
-                    size: 28,
-                  ),
-                  title: const Text(
-                    '✨ Infinite Scrolling ✨',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black26,
-                          offset: Offset(2, 2),
-                          blurRadius: 4,
-                        ),
-                      ],
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.pop(context);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const InfiniteScrollingPage(),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            const Divider(thickness: 2),
           ],
         ),
       ),
