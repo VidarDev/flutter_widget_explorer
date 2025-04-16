@@ -21,6 +21,7 @@ import 'package:flutter_widget_explorer/views/search_bar.page.dart';
 import 'package:flutter_widget_explorer/views/stack_position.page.dart';
 import 'package:flutter_widget_explorer/views/media_query.page.dart';
 import 'package:flutter_widget_explorer/views/clip_and_shapes.page.dart';
+import 'package:flutter_widget_explorer/views/puzzle.page.dart';
 
 // At the top of your HomePage class
 final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -377,7 +378,9 @@ class HomePage extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Container()),
+                  MaterialPageRoute(
+                    builder: (context) => LongPressDraggablePage(),
+                  ),
                 );
               },
             ),
